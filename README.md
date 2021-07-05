@@ -54,4 +54,4 @@ Este projeto foi desenvolvido como um teste, pegando a localização atual do de
 
 ---
 
-Feito com 💜 by Taiuan Pagini 👋🏻
+by Taiuan Pagini 👋🏻
