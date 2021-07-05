@@ -4,10 +4,9 @@ export default class LocationService {
       try {
         const location = await GetLocation.getCurrentPosition({
           enableHighAccuracy: true,
-          timeout: 15000
+          timeout: 150000
         })
-  
-        console.tron.log(location)
+        
         return location
       } catch(err) {
         return false
