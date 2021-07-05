@@ -1,5 +1,4 @@
 import GetLocation from 'react-native-get-location';
-
 export default class LocationService {
     public async getCurrentLocation() {
       try {
@@ -8,6 +7,7 @@ export default class LocationService {
           timeout: 15000
         })
   
+        console.tron.log(location)
         return location
       } catch(err) {
         return false
