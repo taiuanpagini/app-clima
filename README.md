@@ -24,6 +24,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Redux](https://redux.js.org)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Location Device](https://github.com/douglasjunior/react-native-get-location)
+- [Toast](https://github.com/calintamas/react-native-toast-message#readme)
 
 ## 🚀 Como executar
 
@@ -51,6 +52,8 @@ O app estará disponível no seu emulador escolhido.
 ## 💻 Projeto
 
 Este projeto foi desenvolvido como um teste, pegando a localização atual do device e mostrando os dados climáticos da região. Foi utilizado com API o **[Open Weather Map](https://openweathermap.org/api)**
+
+Foi utilizado a lib **[Reactotron](https://github.com/infinitered/reactotron)** para monitorar os logs do app e alterações no estado (Redux). Também foi utilizada a lib **[Keyboard Manager](https://github.com/douglasjunior/react-native-keyboard-manager)** para configurar o teclado do usuário no iOS.
 
 ---
 
