@@ -12,12 +12,13 @@ import { Container } from './styles';
 import { DailyWeatherProps } from '~/components/DailyWeather/interface';
 import LocationService from '~/services/location.service';
 import { RootState } from '~/store/ducks';
+import Modal from '~/components/Modal';
 
 const Home: React.FC = () => {
 	const dispatch = useDispatch();
-	const forecast: DailyWeatherProps = useSelector((state: RootState) => state.forecast);
 	const [loading, setLoading] = useState(true);
 	const [updateForecast, setUpdateForecast] = useState(false);
+	const forecast: DailyWeatherProps = useSelector((state: RootState) => state.forecast);
 	const _forecastService = new ForecastService();
 	const _locationService = new LocationService();
 
@@ -25,7 +26,6 @@ const Home: React.FC = () => {
 		(async () => {
 			const locationCurrent = await _locationService.getCurrentLocation();
 
-			console.tron.log(locationCurrent);
 			if (!locationCurrent) {
 				setLoading(false);
 				dispatch({ type: 'SET_LOCATION', data: null });
@@ -34,7 +34,7 @@ const Home: React.FC = () => {
 				dispatch({ type: 'SET_LOCATION', data: locationCurrent });
 
 				const { latitude, longitude } = locationCurrent;
-				await _forecastService.getDataWeather(latitude, longitude, dispatch);
+				await _forecastService.getWeatherLatLon(latitude, longitude, dispatch);
 
 				setLoading(false);
 			}
@@ -46,17 +46,27 @@ const Home: React.FC = () => {
 		setUpdateForecast(!updateForecast);
 	};
 
+	const searchCity = async (city) => {
+		setLoading(true);
+		await _forecastService.getWeatherCity(city, dispatch, setLoading);
+	};
+
 	return (
-		<Container>
-			{
-				loading ?
-					<ActivityIndicator color="#fff" />
-					:
-					<>
-						<DailyWeather {...forecast} retryLocation={retryLocation} />
-					</>
-			}
-		</Container>
+		<>
+			<Container>
+				{
+					loading ?
+						<ActivityIndicator color="#fff" />
+						:
+						<>
+							<DailyWeather {...forecast} retryLocation={retryLocation} />
+						</>
+				}
+
+			</Container>
+
+			<Modal search={searchCity} />
+		</>
 	);
 };
 

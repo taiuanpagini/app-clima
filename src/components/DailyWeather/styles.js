@@ -110,9 +110,16 @@ export const TextBtn = styled.Text`
     margin-left: 10px;
 `;
 
-export const BtnRetryHome = styled.TouchableOpacity`
+export const ContainerBtnTop = styled.View`
+    width: 70px;
     position: absolute;
     top: 20px;
     right: 20px;
     z-index: 9999;
+    flex-direction: row;
+    justify-content: space-between;
+`;
+
+export const BtnHome = styled.TouchableOpacity`
+    
 `;

@@ -27,21 +27,37 @@ import {
 	BtnRetry,
 	IconRefresh,
 	TextBtn,
-	BtnRetryHome
+	ContainerBtnTop,
+	BtnHome
 } from './styles';
 import { convertDate } from '../../utils/convertDate';
 import IconRetry from '~/assets/images/refresh-white';
+import IconSearch from '~/assets/images/search';
+import { useDispatch, useSelector } from 'react-redux';
+import { ModalProps } from '../Modal/interface';
+import { RootState } from '~/store/ducks';
 
 const DailyWeather: React.FC<DailyWeatherProps> = (props) => {
+	const dispatch = useDispatch();
+	const { show } = useSelector((state: RootState) => state.modal);
 	const { icon, city, forecast, weather, max, min, sunrise, sunset, wind, moisture, sea, pressure, retryLocation } = props;
+
+	const setModal = () => {
+		dispatch({ type: "SET_MODAL", show: !show });
+	};
 
 	return (
 		<Container>
 			{city ?
 				<>
-					<BtnRetryHome onPress={retryLocation}>
-						<IconRetry />
-					</BtnRetryHome>
+					<ContainerBtnTop>
+						<BtnHome onPress={setModal}>
+							<IconSearch />
+						</BtnHome>
+						<BtnHome onPress={retryLocation}>
+							<IconRetry />
+						</BtnHome>
+					</ContainerBtnTop>
 
 					<ImageWeather source={{ uri: `http://openweathermap.org/img/wn/${icon}@2x.png` }} />
 					<City>{city}</City>

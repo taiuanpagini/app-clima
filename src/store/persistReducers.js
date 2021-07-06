@@ -2,6 +2,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 import {persistReducer} from 'redux-persist';
 import forecast from './ducks/forecast';
+import modal from './ducks/modal';
 import location from './ducks/location';
 
 export default reducers => {
@@ -9,7 +10,7 @@ export default reducers => {
     {
       key: 'forecast',
       storage: AsyncStorage,
-      whitelist: [location, forecast],
+      whitelist: [location, forecast, modal],
     },
     reducers,
   );

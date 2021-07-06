@@ -57,6 +57,7 @@ PODS:
     - FlipperKit/Core
     - FlipperKit/FlipperKitNetworkPlugin
   - glog (0.3.5)
+  - IQKeyboardManagerSwift (6.5.4)
   - libevent (2.1.12)
   - OpenSSL-Universal (1.1.180)
   - RCT-Folly (2020.01.13.00):
@@ -320,6 +321,10 @@ PODS:
     - React-perflogger (= 0.64.2)
   - ReactNativeGetLocation (2.1.1):
     - React
+  - ReactNativeKeyboardManager (6.5.4-1):
+    - IQKeyboardManagerSwift (= 6.5.4)
+    - React
+    - React-RCTText
   - RNCAsyncStorage (1.12.1):
     - React-Core
   - RNGestureHandler (1.10.3):
@@ -381,6 +386,7 @@ DEPENDENCIES:
   - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - ReactNativeGetLocation (from `../node_modules/react-native-get-location`)
+  - ReactNativeKeyboardManager (from `../node_modules/react-native-keyboard-manager`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-community/async-storage`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNSVG (from `../node_modules/react-native-svg`)
@@ -397,6 +403,7 @@ SPEC REPOS:
     - Flipper-PeerTalk
     - Flipper-RSocket
     - FlipperKit
+    - IQKeyboardManagerSwift
     - libevent
     - OpenSSL-Universal
     - YogaKit
@@ -460,6 +467,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   ReactNativeGetLocation:
     :path: "../node_modules/react-native-get-location"
+  ReactNativeKeyboardManager:
+    :path: "../node_modules/react-native-keyboard-manager"
   RNCAsyncStorage:
     :path: "../node_modules/@react-native-community/async-storage"
   RNGestureHandler:
@@ -483,6 +492,7 @@ SPEC CHECKSUMS:
   Flipper-RSocket: 127954abe8b162fcaf68d2134d34dc2bd7076154
   FlipperKit: 8a20b5c5fcf9436cac58551dc049867247f64b00
   glog: 73c2498ac6884b13ede40eda8228cb1eee9d9d62
+  IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   OpenSSL-Universal: 1aa4f6a6ee7256b83db99ec1ccdaa80d10f9af9b
   RCT-Folly: ec7a233ccc97cc556cf7237f0db1ff65b986f27c
@@ -510,6 +520,7 @@ SPEC CHECKSUMS:
   React-runtimeexecutor: a9904c6d0218fb9f8b19d6dd88607225927668f9
   ReactCommon: 149906e01aa51142707a10665185db879898e966
   ReactNativeGetLocation: 8ed14beb54f5a61cc3207685753842d616a0fb01
+  ReactNativeKeyboardManager: 93ac3934a51f548c54ac02d61c90e33220bba086
   RNCAsyncStorage: b03032fdbdb725bea0bd9e5ec5a7272865ae7398
   RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
   RNSVG: 551acb6562324b1d52a4e0758f7ca0ec234e278f
