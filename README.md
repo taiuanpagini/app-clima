@@ -6,8 +6,6 @@
   <img src="https://img.shields.io/static/v1?label=Clima&message=Local&color=ed8b23&labelColor=000000" alt="App Clima Local" />
   
   <img src="https://img.shields.io/github/stars/taiuanpagini/app-clima?label=stars&message=MIT&color=ed8b23&labelColor=000000" alt="Stars">
-
-  <img  src="https://img.shields.io/static/v1?label=license&message=MIT&color=ed8b23&labelColor=000000" alt="License">   
 </p>
 
 <h1 align="center">
